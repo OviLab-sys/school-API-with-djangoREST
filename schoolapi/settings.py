@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'school.apps.SchoolConfig',
+    'rest_framwork',
 ]
 
 MIDDLEWARE = [
@@ -75,10 +77,30 @@ WSGI_APPLICATION = 'schoolapi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'schoolapi',
+        'USER': 'root',
+        'PASSWORD': '@Engineering4405',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        "OPTIONS": {
+            "read_default_file": "/path/to/my.cnf",
+        },
+        
     }
 }
+
+
+"""DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'schoolapi',  # Your database name
+        'USER': 'root',       # Your PostgreSQL username
+        'PASSWORD': '@Engineering4405',  # Your PostgreSQL password
+        'HOST': 'localhost',  # Or the IP address if hosted remotely
+        'PORT': '5432',       # Default PostgreSQL port
+    }
+}"""
 
 
 # Password validation
